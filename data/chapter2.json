@@ -1,0 +1,227 @@
+{
+  "chapter": 2,
+  "title": "Fra Paris til Oslo",
+  "description": "Travel, family, pronouns, present tense verbs, noun genders & negation",
+  "subchapters": [
+    { "id": "2A", "title": "Fra Paris til Oslo", "theme": "Travelling by plane with family" },
+    { "id": "2B", "title": "På Gardermoen", "theme": "At the airport, meeting people" },
+    { "id": "2C", "title": "Passkontroll", "theme": "Passport control, checking documents" },
+    { "id": "2D", "title": "Hei, pappa!", "theme": "Reuniting with dad, how are you" }
+  ],
+  "grammar": [
+    {
+      "topic": "Personal pronouns (subject form)",
+      "rule": "jeg, du, han, hun, det/den, vi, dere, de",
+      "examples": [
+        { "no": "Jeg kommer fra Norge.", "en": "I come from Norway." },
+        { "no": "Han er fransk.", "en": "He is French." },
+        { "no": "Vi reiser sammen.", "en": "We travel together." },
+        { "no": "De bor i Fjordvik.", "en": "They live in Fjordvik." }
+      ]
+    },
+    {
+      "topic": "Verbs: infinitive and present tense",
+      "rule": "Add -r to the infinitive to form present tense. Same form for all pronouns.",
+      "examples": [
+        { "no": "å komme → kommer", "en": "to come → come(s)" },
+        { "no": "å sitte → sitter", "en": "to sit → sit(s)" },
+        { "no": "å snakke → snakker", "en": "to speak → speak(s)" }
+      ]
+    },
+    {
+      "topic": "Irregular present tense",
+      "rule": "Some verbs are irregular: å være → er, å gjøre → gjør",
+      "examples": [
+        { "no": "Jeg er norsk.", "en": "I am Norwegian." },
+        { "no": "Hva gjør du?", "en": "What do you do?" }
+      ]
+    },
+    {
+      "topic": "Noun genders",
+      "rule": "Three genders: masculine (en), feminine (ei), neuter (et). Feminine can also use 'en'.",
+      "examples": [
+        { "no": "en gutt", "en": "a boy (masculine)" },
+        { "no": "ei jente", "en": "a girl (feminine)" },
+        { "no": "et fly", "en": "an airplane (neuter)" }
+      ]
+    },
+    {
+      "topic": "Word order with time/place first",
+      "rule": "Verb is always second element, even when sentence starts with time/place word (inversion)",
+      "examples": [
+        { "no": "Nå reiser Alex til Norge.", "en": "Now Alex is travelling to Norway." },
+        { "no": "Der venter pappa.", "en": "Dad is waiting there." }
+      ]
+    },
+    {
+      "topic": "Negation",
+      "rule": "'ikke' (not) comes after the verb in main clauses",
+      "examples": [
+        { "no": "Jeg reiser ikke til Paris.", "en": "I don't travel to Paris." },
+        { "no": "Han snakker ikke norsk.", "en": "He doesn't speak Norwegian." }
+      ]
+    },
+    {
+      "topic": "Ongoing actions: stå/sitte/ligge + verb",
+      "rule": "Use position verbs + og + present tense for ongoing actions (like English -ing)",
+      "examples": [
+        { "no": "Benjamin står og venter.", "en": "Benjamin is waiting." },
+        { "no": "Alex sitter og snakker med ei dame.", "en": "Alex is talking to a woman." }
+      ]
+    },
+    {
+      "topic": "Conjunctions",
+      "rule": "'og' (and) and 'men' (but) connect sentences",
+      "examples": [
+        { "no": "De ser pappa, og Dina roper.", "en": "They see dad, and Dina shouts." },
+        { "no": "Det går bra, men det er ei lang reise.", "en": "I'm fine, but it's a long journey." }
+      ]
+    },
+    {
+      "topic": "Prepositions: i or på",
+      "rule": "'i' for continents, countries, cities. 'på' for mountains, islands, places, parts of a city.",
+      "examples": [
+        { "no": "i Norge, i Oslo", "en": "in Norway, in Oslo" },
+        { "no": "på Gardermoen, på Mallorca", "en": "at Gardermoen, on Mallorca" }
+      ]
+    }
+  ],
+  "vocabulary": [
+    { "no": "alt", "en": "all, everything", "sub": "2C" },
+    { "no": "alt i orden", "en": "all right, everything in order", "sub": "2C" },
+    { "no": "bare", "en": "just, only", "type": "adverb", "sub": "2D" },
+    { "no": "bare bra", "en": "just fine", "sub": "2D" },
+    { "no": "bor", "en": "live(s)", "type": "verb", "sub": "2A", "infinitive": "å bo" },
+    { "no": "bra", "en": "fine, good, well", "type": "adjective", "sub": "2C" },
+    { "no": "dame", "en": "a lady", "article": "ei", "type": "noun", "sub": "2A", "inflection": "dama, damer, damene" },
+    { "no": "de", "en": "they", "type": "pronoun", "sub": "2B" },
+    { "no": "deg", "en": "you (singular, object)", "type": "pronoun", "sub": "2B" },
+    { "no": "dere", "en": "you (plural)", "type": "pronoun", "sub": "2C" },
+    { "no": "det", "en": "it, that", "type": "pronoun", "sub": "2B" },
+    { "no": "det går bra", "en": "I'm fine", "sub": "2D" },
+    { "no": "dra", "en": "to leave", "type": "verb", "article": "å", "sub": "2D", "inflection": "drar, dro, har dratt" },
+    { "no": "ei", "en": "a, an (feminine article)", "sub": "2A" },
+    { "no": "en", "en": "a, an, one", "sub": "2B" },
+    { "no": "et", "en": "a, an (neuter article)", "sub": "2B" },
+    { "no": "fem", "en": "five", "sub": "2A" },
+    { "no": "fjorten", "en": "fourteen", "sub": "2C" },
+    { "no": "fly", "en": "a plane", "article": "et", "type": "noun", "sub": "2A", "inflection": "flyet, fly, flyene" },
+    { "no": "flytte", "en": "to move", "type": "verb", "article": "å", "sub": "2C", "inflection": "flytter, flyttet, har flyttet" },
+    { "no": "fransk", "en": "French", "type": "adjective", "sub": "2B" },
+    { "no": "førti", "en": "forty", "sub": "2B" },
+    { "no": "gammel", "en": "old", "type": "adjective", "sub": "2A", "inflection": "gammelt, gamle" },
+    { "no": "gift", "en": "married", "type": "adjective", "sub": "2B" },
+    { "no": "gutt", "en": "a boy", "article": "en", "type": "noun", "sub": "2B", "inflection": "gutten, gutter, guttene" },
+    { "no": "gå", "en": "to walk, go", "type": "verb", "article": "å", "sub": "2D", "inflection": "går, gikk, har gått" },
+    { "no": "ha", "en": "to have", "type": "verb", "article": "å", "sub": "2B", "inflection": "har, hadde, har hatt" },
+    { "no": "ha det bra", "en": "goodbye", "sub": "2C" },
+    { "no": "ha det", "en": "bye", "sub": "2C" },
+    { "no": "han", "en": "he, him", "type": "pronoun", "sub": "2A" },
+    { "no": "her", "en": "here", "type": "adverb", "sub": "2B" },
+    { "no": "hjem", "en": "home", "type": "adverb", "sub": "2D" },
+    { "no": "hun", "en": "she", "type": "pronoun", "sub": "2A" },
+    { "no": "hvordan", "en": "how", "type": "question word", "sub": "2D" },
+    { "no": "i", "en": "in, at, on", "type": "preposition", "sub": "2A" },
+    { "no": "igjen", "en": "again", "type": "adverb", "sub": "2D" },
+    { "no": "ikke", "en": "not", "type": "adverb", "sub": "2C" },
+    { "no": "ja", "en": "yes", "sub": "2B" },
+    { "no": "jente", "en": "a girl", "article": "ei", "type": "noun", "sub": "2B", "inflection": "jenta, jenter, jentene" },
+    { "no": "kafé", "en": "a café", "article": "en", "type": "noun", "sub": "2B", "inflection": "kafeen, kafeer, kafeene" },
+    { "no": "kjøre", "en": "to drive", "type": "verb", "article": "å", "sub": "2D", "inflection": "kjører, kjørte, har kjørt" },
+    { "no": "komme", "en": "to come", "type": "verb", "article": "å", "sub": "2A", "inflection": "kommer, kom, har kommet" },
+    { "no": "kontrollere", "en": "to control, check", "type": "verb", "article": "å", "sub": "2C", "inflection": "kontrollerer, kontrollerte, har kontrollert" },
+    { "no": "lang", "en": "long", "type": "adjective", "sub": "2D", "inflection": "langt, lange" },
+    { "no": "ledig", "en": "vacant", "type": "adjective", "sub": "2B" },
+    { "no": "mamma", "en": "a mummy", "article": "en", "type": "noun", "sub": "2A" },
+    { "no": "mann", "en": "a man", "article": "en", "type": "noun", "sub": "2C", "inflection": "mannen, menn, mennene" },
+    { "no": "med", "en": "with", "type": "preposition", "sub": "2A" },
+    { "no": "men", "en": "but", "type": "conjunction", "sub": "2C" },
+    { "no": "nei", "en": "no", "sub": "2C" },
+    { "no": "Norge", "en": "Norway", "type": "noun", "sub": "2A" },
+    { "no": "nå", "en": "now", "type": "adverb", "sub": "2B" },
+    { "no": "og", "en": "and", "type": "conjunction", "sub": "2A" },
+    { "no": "også", "en": "too, also", "type": "adverb", "sub": "2B" },
+    { "no": "oss", "en": "us", "type": "pronoun", "sub": "2A" },
+    { "no": "pappa", "en": "a daddy", "article": "en", "type": "noun", "sub": "2A" },
+    { "no": "pass", "en": "a passport", "article": "et", "type": "noun", "sub": "2C", "inflection": "passet, pass, passene" },
+    { "no": "reise", "en": "to travel", "type": "verb", "article": "å", "sub": "2A", "inflection": "reiser, reiste, har reist" },
+    { "no": "rope", "en": "to call, shout", "type": "verb", "article": "å", "sub": "2D", "inflection": "roper, ropte, har ropt" },
+    { "no": "sammen", "en": "together", "type": "adverb", "sub": "2A" },
+    { "no": "se", "en": "to see", "type": "verb", "article": "å", "sub": "2D", "inflection": "ser, så, har sett" },
+    { "no": "sitte", "en": "to sit", "type": "verb", "article": "å", "sub": "2B", "inflection": "sitter, satt, har sittet" },
+    { "no": "snakke", "en": "to speak", "type": "verb", "article": "å", "sub": "2A", "inflection": "snakker, snakket, har snakket" },
+    { "no": "stå", "en": "to stand", "type": "verb", "article": "å", "sub": "2D", "inflection": "står, sto, har stått" },
+    { "no": "så", "en": "so", "type": "adverb", "sub": "2B" },
+    { "no": "ta", "en": "to take", "type": "verb", "article": "å", "sub": "2D", "inflection": "tar, tok, har tatt" },
+    { "no": "takk", "en": "thank you", "sub": "2B" },
+    { "no": "til", "en": "to", "type": "preposition", "sub": "2A" },
+    { "no": "time", "en": "an hour", "article": "en", "type": "noun", "sub": "2D", "inflection": "timen, timer, timene" },
+    { "no": "trøtt", "en": "tired", "type": "adjective", "sub": "2D" },
+    { "no": "unnskyld", "en": "excuse me", "sub": "2B" },
+    { "no": "velkommen", "en": "welcome", "sub": "2D" },
+    { "no": "vente", "en": "to wait", "type": "verb", "article": "å", "sub": "2A", "inflection": "venter, ventet, har ventet" },
+    { "no": "vi", "en": "we", "type": "pronoun", "sub": "2A" },
+    { "no": "være", "en": "to be", "type": "verb", "article": "å", "sub": "2B", "inflection": "er, var, har vært" },
+    { "no": "vær så god", "en": "you're welcome, please, here you are", "sub": "2B" },
+    { "no": "år", "en": "a year", "article": "et", "type": "noun", "sub": "2A", "inflection": "året, år, årene" }
+  ],
+  "phrases": [
+    { "no": "Hvordan går det?", "en": "How are you?" },
+    { "no": "Det går bra!", "en": "I'm fine!" },
+    { "no": "Bare bra!", "en": "Just fine!" },
+    { "no": "Ha det bra!", "en": "Goodbye!" },
+    { "no": "Ha det!", "en": "Bye!" },
+    { "no": "Velkommen hjem!", "en": "Welcome home!" },
+    { "no": "Unnskyld!", "en": "Excuse me!" },
+    { "no": "Vær så god!", "en": "You're welcome! / Here you are!" },
+    { "no": "Alt i orden.", "en": "Everything is in order." },
+    { "no": "Han bor i Norge.", "en": "He lives in Norway." },
+    { "no": "Vi reiser sammen.", "en": "We travel together." },
+    { "no": "Hun er gammel.", "en": "She is old." },
+    { "no": "De har en gutt og ei jente.", "en": "They have a boy and a girl." }
+  ],
+  "questions": {
+    "noToEn": [
+      { "no": "Hvordan går det?", "en": "How are you?", "hint": "'hvordan' = how, 'går det' = goes it (are you doing)" },
+      { "no": "Han bor i Norge.", "en": "He lives in Norway.", "hint": "'han' = he, 'bor' = lives, 'i' = in" },
+      { "no": "Vi reiser med fly.", "en": "We travel by plane.", "hint": "'vi' = we, 'reiser' = travel, 'med fly' = by plane" },
+      { "no": "Hun er ikke norsk.", "en": "She is not Norwegian.", "hint": "'hun' = she, 'ikke' = not" },
+      { "no": "De har en gutt og ei jente.", "en": "They have a boy and a girl.", "hint": "'de' = they, 'har' = have, 'og' = and" },
+      { "no": "Ha det bra!", "en": "Goodbye!", "hint": "A common farewell phrase" },
+      { "no": "Velkommen hjem!", "en": "Welcome home!", "hint": "'velkommen' = welcome, 'hjem' = home" },
+      { "no": "Alex er fem år gammel.", "en": "Alex is five years old.", "hint": "'fem' = five, 'år' = years, 'gammel' = old" },
+      { "no": "Benjamin står og venter.", "en": "Benjamin is waiting.", "hint": "'står og venter' = is standing and waiting (ongoing action)" },
+      { "no": "Nå reiser vi til Norge.", "en": "Now we are travelling to Norway.", "hint": "'nå' = now, note verb-subject inversion" },
+      { "no": "Det er ei lang reise.", "en": "It is a long journey.", "hint": "'det' = it, 'ei' = a (feminine), 'lang' = long" },
+      { "no": "Han snakker også norsk.", "en": "He also speaks Norwegian.", "hint": "'også' = also, comes after the verb" }
+    ],
+    "enToNo": [
+      { "en": "How are you?", "no": "Hvordan går det?", "hint": "'How' = 'Hvordan', 'goes it' = 'går det'" },
+      { "en": "He lives in Norway.", "no": "Han bor i Norge.", "hint": "'lives' = 'bor', 'in' = 'i'" },
+      { "en": "We travel together.", "no": "Vi reiser sammen.", "hint": "'we' = 'vi', 'travel' = 'reiser', 'together' = 'sammen'" },
+      { "en": "She is not Norwegian.", "no": "Hun er ikke norsk.", "hint": "'not' = 'ikke', comes after the verb" },
+      { "en": "They have a boy and a girl.", "no": "De har en gutt og ei jente.", "hint": "'they' = 'de', 'have' = 'har', boy = 'en gutt', girl = 'ei jente'" },
+      { "en": "Goodbye!", "no": "Ha det bra!", "hint": "Literally 'have it good'" },
+      { "en": "Welcome home!", "no": "Velkommen hjem!", "hint": "'welcome' = 'velkommen', 'home' = 'hjem'" },
+      { "en": "He is French.", "no": "Han er fransk.", "hint": "'he' = 'han', 'French' = 'fransk'" },
+      { "en": "I'm fine!", "no": "Det går bra!", "hint": "Literally 'it goes fine'" },
+      { "en": "She speaks Norwegian.", "no": "Hun snakker norsk.", "hint": "'she' = 'hun', 'speaks' = 'snakker'" },
+      { "en": "Now we are travelling to Norway.", "no": "Nå reiser vi til Norge.", "hint": "When 'nå' comes first, verb comes before subject" },
+      { "en": "He doesn't speak Norwegian.", "no": "Han snakker ikke norsk.", "hint": "'ikke' comes after the verb" }
+    ],
+    "fillBlank": [
+      { "sentence": "___ bor i Norge.", "answer": "Han", "options": ["Han", "Ham", "Hans", "Har"], "hint": "Which pronoun means 'he' (subject form)?" },
+      { "sentence": "Vi reiser med ___.", "answer": "fly", "options": ["fly", "bil", "tog", "buss"], "hint": "They're travelling from Paris to Oslo — by what?" },
+      { "sentence": "Hvordan ___ det?", "answer": "går", "options": ["går", "er", "har", "bor"], "hint": "Which verb completes 'How ___ it?' (How are you?)" },
+      { "sentence": "Hun er ___ norsk.", "answer": "ikke", "options": ["ikke", "også", "bare", "så"], "hint": "'not' in Norwegian, placed after the verb" },
+      { "sentence": "De har ___ gutt.", "answer": "en", "options": ["en", "ei", "et", "å"], "hint": "'gutt' (boy) is masculine — which article?" },
+      { "sentence": "Benjamin ___ og venter.", "answer": "står", "options": ["står", "sitter", "ligger", "er"], "hint": "He's standing and waiting — which position verb?" },
+      { "sentence": "Velkommen ___!", "answer": "hjem", "options": ["hjem", "her", "der", "nå"], "hint": "'Welcome ___!' — where?" },
+      { "sentence": "Det er ei ___ reise.", "answer": "lang", "options": ["lang", "god", "bra", "gammel"], "hint": "It's a ___ journey (not short)" },
+      { "sentence": "___ reiser Alex til Norge.", "answer": "Nå", "options": ["Nå", "Ikke", "Også", "Bare"], "hint": "'Now' — and notice the verb comes next (inversion)" },
+      { "sentence": "Alex er fem ___ gammel.", "answer": "år", "options": ["år", "dag", "time", "gutt"], "hint": "Five ___ old — unit of age" },
+      { "sentence": "Jeg snakker ___ norsk.", "answer": "også", "options": ["også", "ikke", "bare", "men"], "hint": "'also/too' — I ___ speak Norwegian" },
+      { "sentence": "Ha det ___!", "answer": "bra", "options": ["bra", "god", "hei", "takk"], "hint": "Completes the goodbye phrase 'Ha det ___!'" }
+    ]
+  }
+}

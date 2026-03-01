@@ -1,0 +1,145 @@
+{
+  "chapter": 1,
+  "title": "Introductions",
+  "description": "Greetings, introductions, nationalities & basic word order",
+  "subchapters": [
+    { "id": "1A", "title": "Alex", "theme": "Basic greeting and asking names" },
+    { "id": "1B", "title": "Benjamin", "theme": "Formal greeting, nice to meet you" },
+    { "id": "1C", "title": "Cecilie", "theme": "Nationality, yes/no questions" },
+    { "id": "1D", "title": "Dina", "theme": "Where are you from?" }
+  ],
+  "grammar": [
+    {
+      "topic": "Word order in main clauses",
+      "rule": "Subject – Verb – Rest of sentence",
+      "examples": [
+        { "no": "Jeg heter Alex.", "en": "My name is Alex." },
+        { "no": "Jeg kommer fra Frankrike.", "en": "I come from France." }
+      ]
+    },
+    {
+      "topic": "Questions with question words",
+      "rule": "Question word – Verb – Subject – Rest",
+      "examples": [
+        { "no": "Hva heter du?", "en": "What is your name?" },
+        { "no": "Hvor kommer du fra?", "en": "Where do you come from?" }
+      ]
+    },
+    {
+      "topic": "Yes/no questions",
+      "rule": "Verb comes first (no question word)",
+      "examples": [
+        { "no": "Er du norsk?", "en": "Are you Norwegian?" }
+      ]
+    },
+    {
+      "topic": "Present tense verbs",
+      "rule": "Most verbs end in -r in present tense",
+      "examples": [
+        { "no": "heter", "en": "am/is/are named" },
+        { "no": "kommer", "en": "come(s)" },
+        { "no": "er", "en": "am/is/are (irregular)" }
+      ]
+    },
+    {
+      "topic": "Question words",
+      "rule": "The h in hv- words is silent",
+      "examples": [
+        { "no": "hva", "en": "what" },
+        { "no": "hvem", "en": "who" },
+        { "no": "hvor", "en": "where / how" },
+        { "no": "hvordan", "en": "how" }
+      ]
+    },
+    {
+      "topic": "Nationalities",
+      "rule": "Country → adjective/nationality → person → language",
+      "examples": [
+        { "no": "Norge – norsk – en nordmann – norsk", "en": "Norway – Norwegian – a Norwegian – Norwegian" },
+        { "no": "Frankrike – fransk – en franskmann – fransk", "en": "France – French – a Frenchman – French" },
+        { "no": "England – engelsk – en engelskmann – engelsk", "en": "England – English – an Englishman – English" }
+      ]
+    }
+  ],
+  "vocabulary": [
+    { "no": "du", "en": "you", "type": "pronoun", "sub": "1A" },
+    { "no": "hei", "en": "hi", "type": "greeting", "sub": "1A" },
+    { "no": "heter", "en": "am/is/are named", "type": "verb", "sub": "1A", "infinitive": "å hete" },
+    { "no": "hva", "en": "what", "type": "question word", "sub": "1A" },
+    { "no": "jeg", "en": "I", "type": "pronoun", "sub": "1A" },
+    { "no": "dag", "en": "a day", "article": "en", "type": "noun", "sub": "1B", "inflection": "dagen, dager, dagene" },
+    { "no": "god", "en": "good", "type": "adjective", "sub": "1B", "inflection": "godt, gode" },
+    { "no": "hete", "en": "to be named", "type": "verb", "sub": "1B", "article": "å", "inflection": "heter, het, har hett" },
+    { "no": "hilse", "en": "to greet", "type": "verb", "sub": "1B", "article": "å", "inflection": "hilser, hilste, har hilst" },
+    { "no": "hyggelig", "en": "nice, pleasant", "type": "adjective", "sub": "1B", "inflection": "hyggelig, hyggelige" },
+    { "no": "på", "en": "on, at", "type": "preposition", "sub": "1B" },
+    { "no": "å", "en": "to (infinitive marker)", "type": "particle", "sub": "1B" },
+    { "no": "er", "en": "am, are, is", "type": "verb", "sub": "1C", "infinitive": "å være" },
+    { "no": "hallo", "en": "hello", "type": "greeting", "sub": "1C" },
+    { "no": "norsk", "en": "Norwegian", "type": "adjective", "sub": "1C", "inflection": "norsk, norske" },
+    { "no": "fra", "en": "from", "type": "preposition", "sub": "1D" },
+    { "no": "Frankrike", "en": "France", "type": "noun", "sub": "1D" },
+    { "no": "hvor", "en": "where", "type": "question word", "sub": "1D" },
+    { "no": "kommer", "en": "come(s)", "type": "verb", "sub": "1D", "infinitive": "å komme" }
+  ],
+  "dialogues": [
+    { "sub": "1A", "no": "Hei! Jeg heter Alex. Hva heter du?", "context": "Alex introduces himself" },
+    { "sub": "1B", "no": "God dag! Jeg heter Benjamin Vidal. Hyggelig å hilse på deg!", "context": "Ben introduces himself formally" },
+    { "sub": "1C", "no": "Hallo! Jeg heter Cecilie Hansen Vidal. Jeg er norsk. Er du norsk?", "context": "Cecilie states her nationality" },
+    { "sub": "1D", "no": "Hei! Jeg heter Dina. Jeg kommer fra Frankrike. Hvor kommer du fra?", "context": "Dina says where she is from" }
+  ],
+  "phrases": [
+    { "no": "Hyggelig å hilse på deg!", "en": "Nice to meet you!" },
+    { "no": "God dag!", "en": "Good day!" },
+    { "no": "Hva heter du?", "en": "What is your name?" },
+    { "no": "Hvor kommer du fra?", "en": "Where do you come from?" },
+    { "no": "Jeg heter ...", "en": "My name is ..." },
+    { "no": "Jeg er norsk.", "en": "I am Norwegian." },
+    { "no": "Jeg kommer fra Frankrike.", "en": "I come from France." },
+    { "no": "Er du norsk?", "en": "Are you Norwegian?" }
+  ],
+  "questions": {
+    "noToEn": [
+      { "no": "Hei! Jeg heter Alex.", "en": "Hi! My name is Alex.", "hint": "Break it down: Hei = Hi, Jeg heter = My name is" },
+      { "no": "Hva heter du?", "en": "What is your name?", "hint": "'hva' = what, 'heter' = is named, 'du' = you" },
+      { "no": "God dag!", "en": "Good day!", "hint": "'god' = good, 'dag' = day" },
+      { "no": "Jeg er norsk.", "en": "I am Norwegian.", "hint": "'jeg' = I, 'er' = am, 'norsk' = Norwegian" },
+      { "no": "Hvor kommer du fra?", "en": "Where do you come from?", "hint": "'hvor' = where, 'kommer fra' = come from" },
+      { "no": "Jeg kommer fra Frankrike.", "en": "I come from France.", "hint": "'Frankrike' = France, 'kommer fra' = come from" },
+      { "no": "Er du norsk?", "en": "Are you Norwegian?", "hint": "Yes/no question — verb 'er' comes first" },
+      { "no": "Hyggelig å hilse på deg!", "en": "Nice to meet you!", "hint": "'hyggelig' = nice, 'å hilse på' = to greet" },
+      { "no": "Hallo! Jeg heter Cecilie.", "en": "Hello! My name is Cecilie.", "hint": "'hallo' = hello, 'jeg heter' = my name is" },
+      { "no": "Jeg heter Benjamin Vidal.", "en": "My name is Benjamin Vidal.", "hint": "'jeg heter' = my name is" },
+      { "no": "Hvor kommer Dina fra?", "en": "Where does Dina come from?", "hint": "'hvor' = where, 'kommer fra' = comes from" },
+      { "no": "Hva heter han?", "en": "What is his name?", "hint": "'hva heter' = what is the name of, 'han' = he/him" }
+    ],
+    "enToNo": [
+      { "en": "Hi! My name is Dina.", "no": "Hei! Jeg heter Dina.", "hint": "Use 'heter' for 'my name is'" },
+      { "en": "What is your name?", "no": "Hva heter du?", "hint": "Question word + verb + subject" },
+      { "en": "I am Norwegian.", "no": "Jeg er norsk.", "hint": "Subject + verb + adjective" },
+      { "en": "Where do you come from?", "no": "Hvor kommer du fra?", "hint": "'come from' = 'kommer ... fra'" },
+      { "en": "I come from France.", "no": "Jeg kommer fra Frankrike.", "hint": "'France' = 'Frankrike'" },
+      { "en": "Good day!", "no": "God dag!", "hint": "Two-word formal greeting" },
+      { "en": "Are you Norwegian?", "no": "Er du norsk?", "hint": "Yes/no questions: verb comes first" },
+      { "en": "Nice to meet you!", "no": "Hyggelig å hilse på deg!", "hint": "hyggelig + å + hilse + på + deg" },
+      { "en": "Hello! My name is Cecilie.", "no": "Hallo! Jeg heter Cecilie.", "hint": "'Hello' = 'Hallo'" },
+      { "en": "I am from France.", "no": "Jeg er fra Frankrike.", "hint": "'am from' = 'er fra'" },
+      { "en": "What is his name?", "no": "Hva heter han?", "hint": "'his name' uses 'heter han'" },
+      { "en": "Where does she come from?", "no": "Hvor kommer hun fra?", "hint": "'she' = 'hun', verb in second position" }
+    ],
+    "fillBlank": [
+      { "sentence": "Hei! Jeg ___ Alex.", "answer": "heter", "options": ["heter", "er", "kommer", "hilser"], "hint": "Which verb means 'am named'?" },
+      { "sentence": "___ heter du?", "answer": "Hva", "options": ["Hva", "Hvor", "Hvem", "Hvordan"], "hint": "'What' in Norwegian" },
+      { "sentence": "Jeg kommer ___ Frankrike.", "answer": "fra", "options": ["fra", "på", "til", "i"], "hint": "Which preposition means 'from'?" },
+      { "sentence": "Jeg ___ norsk.", "answer": "er", "options": ["er", "heter", "kommer", "har"], "hint": "Which verb means 'am/is/are'?" },
+      { "sentence": "___ kommer du fra?", "answer": "Hvor", "options": ["Hvor", "Hva", "Hvem", "Hvordan"], "hint": "Which question word means 'where'?" },
+      { "sentence": "God ___!", "answer": "dag", "options": ["dag", "hei", "hallo", "norsk"], "hint": "Completes the greeting 'Good ___'" },
+      { "sentence": "Hyggelig ___ hilse på deg!", "answer": "å", "options": ["å", "og", "er", "fra"], "hint": "The infinitive marker 'to'" },
+      { "sentence": "___ du norsk?", "answer": "Er", "options": ["Er", "Hva", "Kommer", "Heter"], "hint": "Yes/no questions start with the verb" },
+      { "sentence": "Hei! ___ heter Dina.", "answer": "Jeg", "options": ["Jeg", "Du", "Han", "Hun"], "hint": "Which pronoun means 'I'?" },
+      { "sentence": "Cecilie ___ norsk.", "answer": "er", "options": ["er", "heter", "kommer", "fra"], "hint": "Which verb connects Cecilie to her nationality?" },
+      { "sentence": "Hvor kommer du ___?", "answer": "fra", "options": ["fra", "på", "til", "er"], "hint": "Completes 'come ___'" },
+      { "sentence": "Hyggelig å hilse ___ deg!", "answer": "på", "options": ["på", "fra", "til", "i"], "hint": "Which preposition follows 'hilse'?" }
+    ]
+  }
+}
