@@ -7,13 +7,13 @@ import chapter1 from '../data/chapter1.json';
 import chapter2 from '../data/chapter2.json';
 import chapter3 from '../data/chapter3.json';
 import chapter4 from '../data/chapter4.json';
+import chapter5 from '../data/chapter5.json';
+import chapter6 from '../data/chapter6.json';
 
-const ALL_CHAPTERS = [chapter1, chapter2, chapter3, chapter4];
+const ALL_CHAPTERS = [chapter1, chapter2, chapter3, chapter4, chapter5, chapter6];
 
 // Placeholder info for chapters not yet built
 const CHAPTER_STUBS = [
-  { chapter: 5, title: 'I butikken', description: 'Shopping, food, plural nouns & adjectives' },
-  { chapter: 6, title: 'Mat og drikke', description: 'Food & drink, café, definite form & modal verbs' },
   { chapter: 7, title: 'Arbeid og skole', description: 'Work, school, separable verbs & clock time' },
   { chapter: 8, title: 'Høst', description: 'Autumn, weather, past tense & comparisons' },
   { chapter: 9, title: 'Kropp og helse', description: 'Body, health, hospital & imperative' },
