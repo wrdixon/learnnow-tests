@@ -85,7 +85,7 @@ function NorwegianCharButtons({ inputRef, onInsert }) {
           {ch}
         </button>
       ))}
-      <span style={{ fontSize: 11, color: THEME.textDim, alignSelf: "center", marginLeft: 6, fontFamily: THEME.fontBody }}>
+      <span style={{ fontSize: 13, color: THEME.textDim, alignSelf: "center", marginLeft: 6, fontFamily: THEME.fontBody }}>
         Norwegian characters
       </span>
     </div>
@@ -121,7 +121,7 @@ function QuestionCard({ children, type, typeLabel }) {
   return (
     <div style={{ background: c.bg, border: `1px solid ${c.border}`, borderRadius: 14, padding: "28px 24px", marginBottom: 20, position: "relative", animation: "fadeSlideIn 0.3s ease" }}>
       <style>{`@keyframes fadeSlideIn { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }`}</style>
-      <div style={{ position: "absolute", top: 10, right: 14, fontSize: 10, fontWeight: 700, color: c.accent, textTransform: "uppercase", letterSpacing: "0.1em", fontFamily: THEME.fontBody }}>
+      <div style={{ position: "absolute", top: 10, right: 14, fontSize: 12, fontWeight: 700, color: c.accent, textTransform: "uppercase", letterSpacing: "0.1em", fontFamily: THEME.fontBody }}>
         {typeLabel}
       </div>
       {children}
@@ -211,7 +211,7 @@ function TranslationQuestion({ q, direction, onAnswer, feedbackState, userFirstA
       <p style={{ fontSize: 24, fontWeight: 700, color: THEME.text, marginBottom: 4, fontFamily: THEME.fontDisplay, lineHeight: 1.35, marginTop: 8 }}>
         {prompt}
       </p>
-      <p style={{ fontSize: 12, color: THEME.textDim, marginBottom: 18, fontFamily: THEME.fontBody }}>
+      <p style={{ fontSize: 13, color: THEME.textDim, marginBottom: 18, fontFamily: THEME.fontBody }}>
         Translate to {isNoToEn ? "English" : "Norwegian"}
         {attempt === 2 && !finished && <span style={{ color: THEME.amber }}> — second attempt</span>}
       </p>
@@ -403,21 +403,21 @@ function ResultsScreen({ answers, onRestart, onMenu }) {
         <div style={{ display: "flex", justifyContent: "center", gap: 24, marginBottom: 32 }}>
           <div style={{ textAlign: "center" }}>
             <div style={{ fontSize: 28, fontWeight: 700, color: THEME.green, fontFamily: THEME.fontBody }}>{first}</div>
-            <div style={{ fontSize: 11, color: THEME.textDim, fontFamily: THEME.fontBody, textTransform: "uppercase", letterSpacing: "0.06em" }}>1st try</div>
+            <div style={{ fontSize: 13, color: THEME.textDim, fontFamily: THEME.fontBody, textTransform: "uppercase", letterSpacing: "0.06em" }}>1st try</div>
           </div>
           <div style={{ textAlign: "center" }}>
             <div style={{ fontSize: 28, fontWeight: 700, color: THEME.amber, fontFamily: THEME.fontBody }}>{second}</div>
-            <div style={{ fontSize: 11, color: THEME.textDim, fontFamily: THEME.fontBody, textTransform: "uppercase", letterSpacing: "0.06em" }}>2nd try</div>
+            <div style={{ fontSize: 13, color: THEME.textDim, fontFamily: THEME.fontBody, textTransform: "uppercase", letterSpacing: "0.06em" }}>2nd try</div>
           </div>
           <div style={{ textAlign: "center" }}>
             <div style={{ fontSize: 28, fontWeight: 700, color: THEME.red, fontFamily: THEME.fontBody }}>{wrong}</div>
-            <div style={{ fontSize: 11, color: THEME.textDim, fontFamily: THEME.fontBody, textTransform: "uppercase", letterSpacing: "0.06em" }}>Missed</div>
+            <div style={{ fontSize: 13, color: THEME.textDim, fontFamily: THEME.fontBody, textTransform: "uppercase", letterSpacing: "0.06em" }}>Missed</div>
           </div>
         </div>
       </div>
 
       <div style={{ marginBottom: 28 }}>
-        <h3 style={{ fontSize: 12, fontWeight: 700, color: THEME.textDim, fontFamily: THEME.fontBody, textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: 12 }}>Review</h3>
+        <h3 style={{ fontSize: 13, fontWeight: 700, color: THEME.textDim, fontFamily: THEME.fontBody, textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: 12 }}>Review</h3>
         {answers.map((a, i) => {
           const icon = a.result === "correct1" ? "✓" : a.result === "correct2" ? "~" : "✗";
           const iconColor = a.result === "correct1" ? THEME.green : a.result === "correct2" ? THEME.amber : THEME.red;
@@ -431,7 +431,7 @@ function ResultsScreen({ answers, onRestart, onMenu }) {
           else label = `${q.data.en} → ${q.data.no}`;
 
           return (
-            <div key={i} style={{ padding: "10px 14px", marginBottom: 6, borderRadius: 8, background: bgColor, border: `1px solid ${borderColor}`, fontSize: 13, fontFamily: THEME.fontBody, color: "#b0b0c8" }}>
+            <div key={i} style={{ padding: "10px 14px", marginBottom: 6, borderRadius: 8, background: bgColor, border: `1px solid ${borderColor}`, fontSize: 14, fontFamily: THEME.fontBody, color: "#b0b0c8" }}>
               <span style={{ color: iconColor, fontWeight: 700, marginRight: 8 }}>{icon}</span>
               {label}
               {a.result === "wrong" && a.userAnswer && (
@@ -458,7 +458,7 @@ function ResultsScreen({ answers, onRestart, onMenu }) {
    PDF / PRINT VIEW
    ═══════════════════════════════════════════ */
 
-function PrintableTest({ questions, onClose }) {
+function PrintableTest({ chapterData, questions, onClose }) {
   return (
     <div style={{ position: "fixed", top: 0, left: 0, right: 0, bottom: 0, zIndex: 1000, background: "#fff", color: "#111", overflow: "auto", fontFamily: "'Georgia', serif" }}>
       <style>{`
@@ -558,6 +558,232 @@ function PrintableTest({ questions, onClose }) {
 }
 
 /* ═══════════════════════════════════════════
+   FLASHCARD MODE
+   ═══════════════════════════════════════════ */
+
+function FlashcardMode({ chapterData, onBack }) {
+  const allCards = useState(() => {
+    const cards = [];
+    // Add vocabulary
+    (chapterData.vocabulary || []).forEach((v) => {
+      const front = v.article ? `${v.article} ${v.no}` : v.no;
+      let back = v.en;
+      const extras = [];
+      if (v.type) extras.push(v.type);
+      if (v.inflection) extras.push(v.inflection);
+      if (extras.length) back += `\n${extras.join(" · ")}`;
+      cards.push({ front, back, kind: "vocab" });
+    });
+    // Add phrases
+    (chapterData.phrases || []).forEach((p) => {
+      cards.push({ front: p.no, back: p.en, kind: "phrase" });
+    });
+    return shuffle(cards);
+  })[0];
+
+  const [deck, setDeck] = useState(allCards);
+  const [reviewPile, setReviewPile] = useState([]);
+  const [current, setCurrent] = useState(0);
+  const [flipped, setFlipped] = useState(false);
+  const [knewCount, setKnewCount] = useState(0);
+  const [reviewCount, setReviewCount] = useState(0);
+  const [done, setDone] = useState(false);
+
+  const card = deck[current];
+  const total = allCards.length;
+  const seen = knewCount + reviewCount;
+
+  const handleFlip = () => setFlipped(true);
+
+  const handleKnew = () => {
+    setKnewCount((c) => c + 1);
+    advance();
+  };
+
+  const handleDidntKnow = () => {
+    setReviewCount((c) => c + 1);
+    setReviewPile((p) => [...p, card]);
+    advance();
+  };
+
+  const advance = () => {
+    setFlipped(false);
+    if (current + 1 < deck.length) {
+      setCurrent((c) => c + 1);
+    } else if (reviewPile.length > 0) {
+      // Start review round with shuffled review pile
+      const newDeck = shuffle([...reviewPile, ...(card ? [] : [])]);
+      setDeck(newDeck);
+      setReviewPile([]);
+      setCurrent(0);
+    } else {
+      setDone(true);
+    }
+  };
+
+  // Keyboard support
+  useEffect(() => {
+    const handler = (e) => {
+      if (e.key === " " || e.key === "Enter") {
+        e.preventDefault();
+        if (done) return;
+        if (!flipped) handleFlip();
+      }
+      if (flipped && !done) {
+        if (e.key === "ArrowRight" || e.key === "1") handleKnew();
+        if (e.key === "ArrowLeft" || e.key === "2") handleDidntKnow();
+      }
+    };
+    window.addEventListener("keydown", handler);
+    return () => window.removeEventListener("keydown", handler);
+  });
+
+  if (done) {
+    const pct = total > 0 ? Math.round((knewCount / total) * 100) : 0;
+    return (
+      <div style={{ animation: "fadeSlideIn 0.4s ease" }}>
+        <style>{`@keyframes fadeSlideIn { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }`}</style>
+        <div style={{ textAlign: "center", padding: "40px 0" }}>
+          <div style={{ fontSize: 56, marginBottom: 16 }}>🎴</div>
+          <h2 style={{ fontSize: 34, fontWeight: 700, fontFamily: THEME.fontDisplay, color: THEME.text, margin: "0 0 8px" }}>
+            Flashcards Complete!
+          </h2>
+          <p style={{ fontSize: 15, color: THEME.textMuted, fontFamily: THEME.fontBody, marginBottom: 28 }}>
+            {knewCount} of {total} known · {pct}%
+          </p>
+          <div style={{ display: "flex", gap: 12, justifyContent: "center" }}>
+            <button
+              onClick={() => {
+                setDeck(shuffle([...allCards]));
+                setCurrent(0);
+                setFlipped(false);
+                setKnewCount(0);
+                setReviewCount(0);
+                setReviewPile([]);
+                setDone(false);
+              }}
+              style={{ padding: "14px 28px", fontSize: 15, fontWeight: 700, fontFamily: THEME.fontBody, background: `linear-gradient(135deg, ${THEME.gold}, #c49530)`, color: "#0b0b14", border: "none", borderRadius: 9, cursor: "pointer" }}
+            >
+              Shuffle & Restart
+            </button>
+            <button
+              onClick={onBack}
+              style={{ padding: "14px 28px", fontSize: 15, fontWeight: 600, fontFamily: THEME.fontBody, background: "rgba(255,255,255,0.05)", color: THEME.text, border: `1px solid rgba(255,255,255,0.10)`, borderRadius: 9, cursor: "pointer" }}
+            >
+              Back to Menu
+            </button>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <div>
+      {/* Tally */}
+      <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 20, padding: "12px 18px", background: THEME.bgCard, border: `1px solid ${THEME.bgCardBorder}`, borderRadius: 10 }}>
+        <div style={{ fontSize: 14, fontFamily: THEME.fontBody, color: THEME.textMuted }}>
+          <span style={{ color: THEME.text, fontWeight: 600 }}>{seen}</span> of {total}
+          <span style={{ margin: "0 10px", color: THEME.textDim }}>·</span>
+          <span style={{ color: THEME.green, fontWeight: 600 }}>{knewCount}</span> knew
+          {reviewCount > 0 && (
+            <>
+              <span style={{ margin: "0 10px", color: THEME.textDim }}>·</span>
+              <span style={{ color: THEME.amber, fontWeight: 600 }}>{reviewCount}</span> to review
+            </>
+          )}
+        </div>
+        <button onClick={onBack} style={{ padding: "6px 14px", fontSize: 13, fontWeight: 600, fontFamily: THEME.fontBody, background: "rgba(255,255,255,0.04)", color: THEME.textMuted, border: `1px solid rgba(255,255,255,0.08)`, borderRadius: 6, cursor: "pointer" }}>
+          Done
+        </button>
+      </div>
+
+      {/* Card */}
+      {card && (
+        <div
+          onClick={() => !flipped && handleFlip()}
+          style={{
+            background: THEME.bgCard,
+            border: `1px solid ${flipped ? THEME.goldBorder : THEME.bgCardBorder}`,
+            borderRadius: 16,
+            padding: "48px 32px",
+            minHeight: 220,
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            justifyContent: "center",
+            cursor: flipped ? "default" : "pointer",
+            transition: "all 0.25s ease",
+            animation: "fadeSlideIn 0.3s ease",
+            textAlign: "center",
+          }}
+        >
+          <style>{`@keyframes fadeSlideIn { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }`}</style>
+
+          {/* Kind badge */}
+          <div style={{ fontSize: 12, fontWeight: 700, color: card.kind === "phrase" ? THEME.blue : THEME.gold, textTransform: "uppercase", letterSpacing: "0.1em", marginBottom: 16, fontFamily: THEME.fontBody }}>
+            {card.kind === "phrase" ? "Phrase" : "Vocabulary"}
+          </div>
+
+          {/* Front */}
+          <div style={{ fontSize: 32, fontWeight: 700, fontFamily: THEME.fontDisplay, color: THEME.text, marginBottom: flipped ? 20 : 0, lineHeight: 1.3 }}>
+            {card.front}
+          </div>
+
+          {/* Back (revealed) */}
+          {flipped && (
+            <div style={{ animation: "fadeSlideIn 0.25s ease" }}>
+              <div style={{ width: 60, height: 1, background: "rgba(255,255,255,0.1)", margin: "0 auto 20px" }} />
+              {card.back.split("\n").map((line, i) => (
+                <div key={i} style={{
+                  fontSize: i === 0 ? 22 : 14,
+                  fontWeight: i === 0 ? 600 : 400,
+                  fontFamily: i === 0 ? THEME.fontDisplay : THEME.fontBody,
+                  color: i === 0 ? THEME.green : THEME.textMuted,
+                  marginBottom: 4,
+                  lineHeight: 1.4,
+                }}>
+                  {line}
+                </div>
+              ))}
+            </div>
+          )}
+
+          {!flipped && (
+            <div style={{ fontSize: 13, color: THEME.textDim, marginTop: 20, fontFamily: THEME.fontBody }}>
+              Click or press Space to reveal
+            </div>
+          )}
+        </div>
+      )}
+
+      {/* Action buttons */}
+      {flipped && (
+        <div style={{ display: "flex", gap: 12, marginTop: 16, animation: "fadeSlideIn 0.2s ease" }}>
+          <button
+            onClick={handleDidntKnow}
+            style={{ flex: 1, padding: "14px", fontSize: 15, fontWeight: 600, fontFamily: THEME.fontBody, background: THEME.redLight, color: THEME.red, border: `1px solid ${THEME.redBorder}`, borderRadius: 9, cursor: "pointer" }}
+          >
+            Didn't Know ←
+          </button>
+          <button
+            onClick={handleKnew}
+            style={{ flex: 1, padding: "14px", fontSize: 15, fontWeight: 700, fontFamily: THEME.fontBody, background: `linear-gradient(135deg, ${THEME.green}, #38a068)`, color: "#0b0b14", border: "none", borderRadius: 9, cursor: "pointer" }}
+          >
+            Knew It →
+          </button>
+        </div>
+      )}
+
+      {/* Keyboard hint */}
+      <div style={{ textAlign: "center", marginTop: 14, fontSize: 12, color: THEME.textDim, fontFamily: THEME.fontBody }}>
+        Space to flip · ← Didn't know · → Knew it
+      </div>
+    </div>
+  );
+}
+
+/* ═══════════════════════════════════════════
    QUESTION QUEUE MANAGER
    ═══════════════════════════════════════════ */
 
@@ -625,14 +851,36 @@ function useQuestionQueue(chapterData, reviewData = []) {
    MAIN APP
    ═══════════════════════════════════════════ */
 
+// Helper: filter chapter data by subsection
+function filterBySub(chapterData, sub) {
+  if (!sub) return chapterData; // null = all
+  const filterArr = (arr) => (arr || []).filter((item) => item.sub === sub || item.sub === "review");
+  return {
+    ...chapterData,
+    vocabulary: (chapterData.vocabulary || []).filter((v) => v.sub === sub),
+    phrases: (chapterData.phrases || []).filter((p) => p.sub === sub),
+    questions: {
+      noToEn: filterArr(chapterData.questions?.noToEn),
+      enToNo: filterArr(chapterData.questions?.enToNo),
+      fillBlank: filterArr(chapterData.questions?.fillBlank),
+    },
+  };
+}
+
 export default function ChapterTest({ chapterData, reviewData = [], onBack }) {
   const [screen, setScreen] = useState("menu");
+  const [selectedSub, setSelectedSub] = useState(null); // null = all, or "3A", "3B", etc.
   const [currentQuestion, setCurrentQuestion] = useState(null);
   const [feedbackState, setFeedbackState] = useState(null); // null, "hint", "correct1", "correct2", "wrong"
   const [userFirstAnswer, setUserFirstAnswer] = useState("");
   const [allAnswers, setAllAnswers] = useState([]);
   const [showPrint, setShowPrint] = useState(false);
-  const { getNext, addWrong, reset } = useQuestionQueue(chapterData, reviewData);
+
+  const filteredData = filterBySub(chapterData, selectedSub);
+  const { getNext, addWrong, reset } = useQuestionQueue(filteredData, reviewData);
+  const hasSubchapters = chapterData.subchapters && chapterData.subchapters.length > 1;
+
+  const startFlashcards = () => setScreen("flashcards");
 
   const startQuiz = () => {
     reset();
@@ -666,7 +914,7 @@ export default function ChapterTest({ chapterData, reviewData = [], onBack }) {
   };
 
   const generatePrintQuestions = () => {
-    return generatePrintableTest(chapterData, 20);
+    return generatePrintableTest(filteredData, 20);
   };
 
   const finished = feedbackState === "correct1" || feedbackState === "correct2" || feedbackState === "wrong";
@@ -674,7 +922,7 @@ export default function ChapterTest({ chapterData, reviewData = [], onBack }) {
   const correctCount = allAnswers.filter((a) => a.result === "correct1" || a.result === "correct2").length + (finished && (feedbackState === "correct1" || feedbackState === "correct2") ? 1 : 0);
 
   if (showPrint) {
-    return <PrintableTest questions={generatePrintQuestions()} onClose={() => setShowPrint(false)} />;
+    return <PrintableTest chapterData={chapterData} questions={generatePrintQuestions()} onClose={() => setShowPrint(false)} />;
   }
 
   return (
@@ -686,7 +934,7 @@ export default function ChapterTest({ chapterData, reviewData = [], onBack }) {
 
         {/* Header */}
         <div style={{ textAlign: "center", marginBottom: screen === "menu" ? 40 : 24 }}>
-          <div style={{ fontSize: 11, fontWeight: 600, letterSpacing: "0.14em", textTransform: "uppercase", color: THEME.gold, marginBottom: 6 }}>LearnNoW</div>
+          <div style={{ fontSize: 13, fontWeight: 600, letterSpacing: "0.14em", textTransform: "uppercase", color: THEME.gold, marginBottom: 6 }}>LearnNoW</div>
           <h1 style={{
             fontSize: screen === "menu" ? 44 : 26,
             fontWeight: 700,
@@ -710,10 +958,12 @@ export default function ChapterTest({ chapterData, reviewData = [], onBack }) {
           <div>
             {/* Vocab */}
             <div style={{ background: THEME.bgCard, border: `1px solid ${THEME.bgCardBorder}`, borderRadius: 14, padding: "22px 22px 16px", marginBottom: 24 }}>
-              <h3 style={{ fontSize: 11, fontWeight: 700, color: THEME.textDim, textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: 14, marginTop: 0 }}>Vocabulary</h3>
+              <h3 style={{ fontSize: 13, fontWeight: 700, color: THEME.textDim, textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: 14, marginTop: 0 }}>
+                Vocabulary{selectedSub ? ` — ${selectedSub}` : ""} ({filteredData.vocabulary.length})
+              </h3>
               <div style={{ display: "flex", flexWrap: "wrap", gap: 6 }}>
-                {chapterData.vocabulary.map((v) => (
-                  <span key={v.no} style={{ padding: "5px 12px", background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.07)", borderRadius: 16, fontSize: 12 }}>
+                {filteredData.vocabulary.map((v) => (
+                  <span key={v.no} style={{ padding: "5px 12px", background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.07)", borderRadius: 16, fontSize: 13 }}>
                     <span style={{ fontWeight: 600, color: THEME.gold }}>{v.no}</span>
                     <span style={{ color: THEME.textDim, margin: "0 5px" }}>·</span>
                     <span style={{ color: "#9a9ab8" }}>{v.en}</span>
@@ -724,8 +974,8 @@ export default function ChapterTest({ chapterData, reviewData = [], onBack }) {
 
             {/* Grammar */}
             <div style={{ background: THEME.bgCard, border: `1px solid ${THEME.bgCardBorder}`, borderRadius: 14, padding: "22px", marginBottom: 24 }}>
-              <h3 style={{ fontSize: 11, fontWeight: 700, color: THEME.textDim, textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: 10, marginTop: 0 }}>Grammar Topics</h3>
-              <div style={{ fontSize: 13, color: "#9a9ab8", lineHeight: 1.9 }}>
+              <h3 style={{ fontSize: 13, fontWeight: 700, color: THEME.textDim, textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: 10, marginTop: 0 }}>Grammar Topics</h3>
+              <div style={{ fontSize: 14, color: "#9a9ab8", lineHeight: 1.9 }}>
                 {chapterData.grammar.map((g, i) => (
                   <div key={i}>▸ {g.topic}: <span style={{ color: "#b8b8d0" }}>{g.rule}</span></div>
                 ))}
@@ -733,14 +983,78 @@ export default function ChapterTest({ chapterData, reviewData = [], onBack }) {
             </div>
 
             {/* Actions */}
+
+            {/* Subsection picker */}
+            {hasSubchapters && (
+              <div style={{ background: THEME.bgCard, border: `1px solid ${THEME.bgCardBorder}`, borderRadius: 14, padding: "22px", marginBottom: 24 }}>
+                <h3 style={{ fontSize: 13, fontWeight: 700, color: THEME.textDim, textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: 12, marginTop: 0 }}>Section</h3>
+                <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
+                  <button
+                    onClick={() => setSelectedSub(null)}
+                    style={{
+                      padding: "8px 16px",
+                      fontSize: 13,
+                      fontWeight: 600,
+                      fontFamily: THEME.fontBody,
+                      background: !selectedSub ? THEME.goldLight : "rgba(255,255,255,0.04)",
+                      border: `1px solid ${!selectedSub ? THEME.goldBorder : "rgba(255,255,255,0.10)"}`,
+                      borderRadius: 7,
+                      color: !selectedSub ? THEME.gold : THEME.textMuted,
+                      cursor: "pointer",
+                      transition: "all 0.15s ease",
+                    }}
+                  >
+                    All sections
+                  </button>
+                  {chapterData.subchapters.map((sc) => {
+                    const isActive = selectedSub === sc.id;
+                    const count = (chapterData.vocabulary || []).filter((v) => v.sub === sc.id).length;
+                    return (
+                      <button
+                        key={sc.id}
+                        onClick={() => setSelectedSub(sc.id)}
+                        style={{
+                          padding: "8px 16px",
+                          fontSize: 13,
+                          fontWeight: 600,
+                          fontFamily: THEME.fontBody,
+                          background: isActive ? THEME.goldLight : "rgba(255,255,255,0.04)",
+                          border: `1px solid ${isActive ? THEME.goldBorder : "rgba(255,255,255,0.10)"}`,
+                          borderRadius: 7,
+                          color: isActive ? THEME.gold : THEME.textMuted,
+                          cursor: "pointer",
+                          transition: "all 0.15s ease",
+                        }}
+                        title={sc.theme}
+                      >
+                        {sc.id} {sc.title} <span style={{ color: THEME.textDim, fontWeight: 400 }}>({count})</span>
+                      </button>
+                    );
+                  })}
+                </div>
+                {selectedSub && (
+                  <div style={{ marginTop: 10, fontSize: 13, color: THEME.textMuted, fontFamily: THEME.fontBody }}>
+                    {chapterData.subchapters.find((s) => s.id === selectedSub)?.theme}
+                    {" · "}
+                    {filteredData.vocabulary.length} words
+                    {" · "}
+                    {(filteredData.questions.noToEn.length + filteredData.questions.enToNo.length + filteredData.questions.fillBlank.length)} questions
+                  </div>
+                )}
+              </div>
+            )}
+
             <button onClick={startQuiz} style={{ width: "100%", padding: "16px", fontSize: 16, fontWeight: 700, fontFamily: THEME.fontBody, background: `linear-gradient(135deg, ${THEME.gold}, #c49530)`, color: "#0b0b14", border: "none", borderRadius: 10, cursor: "pointer", marginBottom: 10, letterSpacing: "0.01em" }}>
-              Start Interactive Test
+              Start Interactive Test{selectedSub ? ` — ${selectedSub}` : ""}
             </button>
-            <button onClick={() => setShowPrint(true)} style={{ width: "100%", padding: "14px", fontSize: 14, fontWeight: 600, fontFamily: THEME.fontBody, background: "rgba(255,255,255,0.04)", color: THEME.textMuted, border: `1px solid rgba(255,255,255,0.08)`, borderRadius: 10, cursor: "pointer", marginBottom: 10 }}>
+            <button onClick={startFlashcards} style={{ width: "100%", padding: "14px", fontSize: 15, fontWeight: 600, fontFamily: THEME.fontBody, background: `linear-gradient(135deg, ${THEME.blue}, #3a8cc0)`, color: "#0b0b14", border: "none", borderRadius: 10, cursor: "pointer", marginBottom: 10 }}>
+              🎴 Flashcards{selectedSub ? ` — ${selectedSub}` : ""}
+            </button>
+            <button onClick={() => setShowPrint(true)} style={{ width: "100%", padding: "14px", fontSize: 15, fontWeight: 600, fontFamily: THEME.fontBody, background: `linear-gradient(135deg, ${THEME.orange}, #b86535)`, color: "#0b0b14", border: "none", borderRadius: 10, cursor: "pointer", marginBottom: 10 }}>
               Generate Printable Test (20 questions)
             </button>
             {onBack && (
-              <button onClick={onBack} style={{ width: "100%", padding: "12px", fontSize: 13, fontWeight: 500, fontFamily: THEME.fontBody, background: "transparent", color: THEME.textDim, border: "none", cursor: "pointer" }}>
+              <button onClick={onBack} style={{ width: "100%", padding: "12px", fontSize: 14, fontWeight: 500, fontFamily: THEME.fontBody, background: "transparent", color: THEME.textDim, border: "none", cursor: "pointer" }}>
                 ← Back to chapters
               </button>
             )}
@@ -754,7 +1068,7 @@ export default function ChapterTest({ chapterData, reviewData = [], onBack }) {
 
             {/* Finish button */}
             <div style={{ display: "flex", justifyContent: "flex-end", marginBottom: 16 }}>
-              <button onClick={handleFinish} style={{ padding: "7px 18px", fontSize: 12, fontWeight: 600, fontFamily: THEME.fontBody, background: "rgba(255,255,255,0.04)", color: THEME.textMuted, border: `1px solid rgba(255,255,255,0.08)`, borderRadius: 6, cursor: "pointer" }}>
+              <button onClick={handleFinish} style={{ padding: "7px 18px", fontSize: 13, fontWeight: 600, fontFamily: THEME.fontBody, background: "rgba(255,255,255,0.04)", color: THEME.textMuted, border: `1px solid rgba(255,255,255,0.08)`, borderRadius: 6, cursor: "pointer" }}>
                 Finish Now
               </button>
             </div>
@@ -795,6 +1109,11 @@ export default function ChapterTest({ chapterData, reviewData = [], onBack }) {
               </button>
             )}
           </div>
+        )}
+
+        {/* ─── FLASHCARDS ─── */}
+        {screen === "flashcards" && (
+          <FlashcardMode chapterData={filteredData} onBack={() => setScreen("menu")} />
         )}
 
         {/* ─── RESULTS ─── */}

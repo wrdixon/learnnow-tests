@@ -5,13 +5,13 @@ import ChapterTest from './ChapterTest';
 // Import chapter data
 import chapter1 from '../data/chapter1.json';
 import chapter2 from '../data/chapter2.json';
+import chapter3 from '../data/chapter3.json';
+import chapter4 from '../data/chapter4.json';
 
-const ALL_CHAPTERS = [chapter1, chapter2];
+const ALL_CHAPTERS = [chapter1, chapter2, chapter3, chapter4];
 
 // Placeholder info for chapters not yet built
 const CHAPTER_STUBS = [
-  { chapter: 3, title: 'Hjemme', description: 'Home, rooms, furniture & possessives' },
-  { chapter: 4, title: 'Hverdagen', description: 'Daily life, time, family & reflexive verbs' },
   { chapter: 5, title: 'I butikken', description: 'Shopping, food, plural nouns & adjectives' },
   { chapter: 6, title: 'Mat og drikke', description: 'Food & drink, café, definite form & modal verbs' },
   { chapter: 7, title: 'Arbeid og skole', description: 'Work, school, separable verbs & clock time' },
@@ -92,7 +92,7 @@ function ChapterGrid({ onSelect }) {
           </div>
           <div
             style={{
-              fontSize: 12,
+              fontSize: 13,
               color: THEME.textMuted,
               fontFamily: THEME.fontBody,
               lineHeight: 1.4,
@@ -104,7 +104,7 @@ function ChapterGrid({ onSelect }) {
             <div
               style={{
                 marginTop: 10,
-                fontSize: 11,
+                fontSize: 13,
                 color: THEME.textDim,
                 fontFamily: THEME.fontBody,
               }}
@@ -116,7 +116,7 @@ function ChapterGrid({ onSelect }) {
             <div
               style={{
                 marginTop: 10,
-                fontSize: 11,
+                fontSize: 13,
                 color: THEME.textDim,
                 fontFamily: THEME.fontBody,
                 fontStyle: 'italic',
@@ -172,7 +172,7 @@ export default function App() {
         <div style={{ textAlign: 'center', marginBottom: 48 }}>
           <div
             style={{
-              fontSize: 11,
+              fontSize: 13,
               fontWeight: 600,
               letterSpacing: '0.14em',
               textTransform: 'uppercase',
