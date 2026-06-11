@@ -8,6 +8,8 @@ npm run deploy
 
 This builds and pushes to the gh-pages branch automatically. No need to manually copy dist files.
 
+After deploying, always commit and push source changes to main.
+
 ## Project structure
 - `src/` — React source
 - `src/App.jsx` — main file; must be updated when adding a new chapter (import + remove from CHAPTER_STUBS)
